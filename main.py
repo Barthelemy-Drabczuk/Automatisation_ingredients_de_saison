@@ -3,8 +3,8 @@ from parse import Parser
 
 def main() -> None:
     my_page: Downloader = Downloader("https://www.greenpeace.fr/guetteur/calendrier/")
-    parser = Parser()
-    print (parser.feed(my_page.get_content()))
+    parser = Parser(my_page.get_content())
+    print (parser.get_current_month())
 
 if __name__ == "__main__":
     main()
